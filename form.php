@@ -73,7 +73,7 @@ if (!empty($messages)) {
   <p></p>
   <div>
   <label>Ваша Биография: </label>
-  <textarea name="biography" <?php if ($errors['biography']) {print 'class="error"';} ?> value="<?php print $values['biography']; ?>"></textarea>
+  <textarea name="biography" <?php if ($errors['biography']) {print 'class="error"';} ?>> <?php print $values['biography']; ?></textarea>
   </div>
   <input name='nform' hidden value=<?php print($_GET['edit_id']);?>>
   <input type="submit" name='save' value="Save"/>
