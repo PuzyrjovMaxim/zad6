@@ -19,42 +19,42 @@
             <td>'.$user['sex'].'</td>
             <td>'.$user['limbs'].'</td>
             <td>';
-              $user_abil=array(
+              $user_pwrs=array(
                   "1"=>FALSE,
                   "2"=>FALSE,
                   "3"=>FALSE,
                   "4"=>FALSE,
                   "5"=>FALSE,
               );
-              foreach($abl as $abil){
-                  if($abil['application_id']==$user['id']){
-                    if($abil['ability']=='1'){
-                        $user_abil['1']=TRUE;
+              foreach($pwrs as $pwr){
+                  if($pwr['application_id']==$user['id']){
+                    if($pwr['ability_id']=='1'){
+                        $user_pwrs['1']=TRUE;
                     }
-                    if($abl['ability']=='2'){
-                        $user_abil['2']=TRUE;
+                    if($pwr['ability_id']=='2'){
+                        $user_pwrs['2']=TRUE;
                     }
-                    if($abl['ability']=='3'){
-                        $user_abil['3']=TRUE;
+                    if($pwr['ability_id']=='3'){
+                        $user_pwrs['3']=TRUE;
                     }      
-                    if($abl['ability']=='4'){
-                      $user_abil['4']=TRUE;
+                    if($pwr['ability_id']=='4'){
+                      $user_pwrs['4']=TRUE;
                     }  
-                    if($abl['ability']=='5'){
-                      $user_abil['5']=TRUE;
+                    if($pwr['ability_id']=='5'){
+                      $uuser_pwrs['5']=TRUE;
                     }                   
                   }
               }
-              if($user_abil['1']){echo '1<br>';}
-              if($user_abil['2']){echo '2<br>';}
-              if($user_abil['3']){echo '3<br>';}
-              if($user_abil['4']){echo '4<br>';}
-              if($user_abil['5']){echo '5<br>';}
+              if($user_pwrs['1']){echo '1<br>';}
+              if($user_pwrs['2']){echo '2<br>';}
+              if($user_pwrs['3']){echo '3<br>';}
+              if($user_pwrs['4']){echo '4<br>';}
+              if($user_pwrs['5']){echo '5<br>';}
             echo '</td>
             <td>'.$user['biography'].'</td>
             <td>
               <form method="get" action="index.php">
-                <input name='edit_id' value='.$user['id'].' hidden>
+                <input name=edit_id value='.$user['id'].' hidden>
                 <input type="submit" value=Edit>
               </form>
             </td>
@@ -63,10 +63,10 @@
     ?>
   </table>
   <?php
-  printf('Пользователи без суперспособностей: %d <br>',$abil_count[0]);
-  printf('Пользователи с телепортацией: %d <br>',$abil_count[1]);
-  printf('Пользователи с невидимостью: %d <br>',$abil_count[2]);
-  printf('Пользователи с мгновенным переводом: %d <br>',$abil_count[3]);
-  printf('Пользователи с полётом: %d <br>',$abil_count[4]);
+  printf('Пользователи без суперспособностей: %d <br>',$pwrs_count[0]);
+  printf('Пользователи с телепортацией: %d <br>',$pwrs_count[1]);
+  printf('Пользователи с невидимостью: %d <br>',$pwrs_count[2]);
+  printf('Пользователи с мгновенным переводом: %d <br>',$pwrs_count[3]);
+  printf('Пользователи с полётом: %d <br>',$pwrs_count[4]);
   ?>
   </div>
